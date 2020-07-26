@@ -4,7 +4,7 @@ class Portfolio extends React.Component {
   render(){
     return(
       <BaseLayout>
-      <h1>Portfolio เว้ย</h1>
+      <h1 className="customClass">Portfolio เว้ย</h1>
       </BaseLayout>
     )
   }
