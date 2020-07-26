@@ -1,3 +1,11 @@
 1. Create navbar - about, portfolio, blog, cv
 2. Make all pages class components
 3. Return just simple text "Jo Blog..."
+
+
+-----------Get Posts------------
+1.git InitialProps create new request to axios to endpoint
+2.get data(first 10 posts) from response and pass them to props
+3.in render function of portfolio display data of posts you just fetched
+    created with <ul> and <li> {post.id}
+4.let's go
