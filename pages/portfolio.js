@@ -1,37 +1,26 @@
 import React from "react";
 import BaseLayout from "../components/layouts/BaseLayout";
 import axios from "axios";
-import Link from "next/link";
 class Portfolio extends React.Component {
-  static async getInitialProps() {
-    let posts = [];
+  static async getInitialProps({query}) {
+    let post = [];
     try {
-      const res = await axios.get("https://jsonplaceholder.typicode.com/posts");
-      posts = res.data;
+      const res = await axios.get(`https://jsonplaceholder.typicode.com/posts/${query.id}`);
+      post = res.data;
     } catch (e) {
       console.log(e);
     }
-    return { posts: posts.slice(0, 10) };
-  }
-
-  renderPosts(posts) {
-    return posts.map((p) => (
-      <li key={p.id} style={{ fontSize: "20px" }}>
-        <Link as={`/portfolio/${p.id}`} href={`/portfolio/[id]`}>
-          <a>
-            {p.id} : {p.title}
-          </a>
-        </Link>
-      </li>
-    ));
+    return { portfolio: post };
   }
 
   render() {
-    const { posts } = this.props;
+    const { portfolio } = this.props;
     return (
       <BaseLayout>
-        <h1 className="customClass">Portfolio เว้ย</h1>
-        <ul>{this.renderPosts(posts)}</ul>
+        <h1>Portfolio Page</h1>
+        <h1>{portfolio.title}</h1>
+        <p>{portfolio.body}</p>
+        <p>{portfolio.id}</p>
       </BaseLayout>
     );
   }
