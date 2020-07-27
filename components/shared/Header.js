@@ -6,10 +6,8 @@ class Header extends React.Component {
     render(){
         return(
             <React.Fragment>
-            <p className="customClass">I am style</p>
-            <p className="customClassFromFile">I am style P element</p>
             <Link href="/">
-                <a style={{'fontSize': '30px'}}>Home</a>
+                <a>Home</a>
             </Link>
             <Link href="/about">
             <a>About</a>
@@ -23,13 +21,6 @@ class Header extends React.Component {
                 <Link href="/cv">
                 <a>CV</a>
             </Link>
-            <style jsx global>
-                {`
-                    .customClass {
-                        color: red;
-                    }
-                `}
-            </style>
             </React.Fragment>
         )
     }

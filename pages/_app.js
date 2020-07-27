@@ -1,5 +1,6 @@
 
 import '../style/style.scss'
+import 'bootstrap/dist/css/bootstrap.min.css';
 
 const App = ({Component, pageProps}) => {
     
