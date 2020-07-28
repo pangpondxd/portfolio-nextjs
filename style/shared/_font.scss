@@ -1,12 +1,34 @@
 @font-face {
-    font-family: 'couture-bld';
-    src: url('/fonts/couture-bld.otf');
+    font-family: 'OldStandardTT';
+    src: url('/fonts/OldStandardTT-Regular.ttf');
     font-weight: bold;
     font-style: normal;
 }
 @font-face {
-    font-family: 'couture-bld';
-    src: url('/fonts/couture-bldit.otf');
+    font-family: 'OldStandardTT-Italic';
+    src: url('/fonts/OldStandardTT-Italic.ttf');
     font-weight: bold;
     font-style: italic;
 }
+
+@font-face {
+    font-family: 'OldStandardTT-Blod';
+    src: url('/fonts/OldStandardTT-Blod.ttf');
+    font-weight: bold;
+    font-style: bold;
+}
+
+@font-face {
+    font-family: 'couture-bld';
+    src: url('/fonts/couture-bld.otf');
+    font-weight: bold;
+    font-style: bold;
+}
+
+@font-face {
+    font-family: 'Poppins-Regular';
+    src: url('/fonts/Poppins-Regular.ttf');
+    font-weight: normal;
+    font-style: normal;
+}
+

@@ -17,9 +17,9 @@ class Portfolios extends React.Component {
 
   renderPosts(posts) {
     return posts.map((p) => (
-      <li key={p.id} style={{ fontSize: "20px" }}>
+      <li key={p.id} style={{ fontSize: "20px"}}>
         <Link route={`/portfolios/${p.id}`}>
-          <a>
+          <a style={{color: "black"}}>
             {p.id} : {p.title}
           </a>
         </Link>

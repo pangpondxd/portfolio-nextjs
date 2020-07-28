@@ -1,29 +1,66 @@
-import React from 'react'
-import Link from 'next/link'
+import React, { useState } from "react";
+import {
+  Collapse,
+  Navbar,
+  NavbarToggler,
+  NavbarBrand,
+  Nav,
+  NavItem,
+  NavLink,
+  UncontrolledDropdown,
+  DropdownToggle,
+  DropdownMenu,
+  DropdownItem,
+  NavbarText,
+} from "reactstrap";
+import Link from "next/link";
 
+const BsNavLink = (props) => {
+  const { title, href } = props;
+  return (
+    <Link href={href}>
+      <a className="nav-link">{title}</a>
+    </Link>
+  );
+};
 
-class Header extends React.Component {
-    render(){
-        return(
-            <React.Fragment>
-            <Link href="/">
-                <a>Home</a>
-            </Link>
-            <Link href="/about">
-            <a>About</a>
-                </Link>
-             <Link href="/portfolios">
-                <a>Portfolio</a>
-             </Link>
-                <Link href="/blog">
-                 <a>Blog</a>
-                </Link>
-                <Link href="/cv">
-                <a>CV</a>
-            </Link>
-            </React.Fragment>
-        )
-    }
+export default class Header extends React.Component {
+  state = { isOpen: false };
+  toggle = () => {
+    this.setState({ isOpen: !this.state.isOpen });
+  };
+
+  render() {
+    return (
+      <div>
+        <Navbar color="light" light expand="md">
+          <NavbarBrand href="/">reactstrap</NavbarBrand>
+          <NavbarToggler onClick={this.toggle} />
+          <Collapse isOpen={this.isOpen} navbar>
+            <Nav className="mr-auto" navbar>
+              <NavItem>
+                <BsNavLink href="/" title="Home" />
+              </NavItem>
+              <NavItem>
+                <BsNavLink href="/about" title="About" />
+              </NavItem>
+              <NavItem>
+                <BsNavLink href="/portfolios" title="Portfolios" />
+              </NavItem>
+              <NavItem>
+                <BsNavLink href="/blog" title="Blogs" />
+              </NavItem>
+              <NavItem>
+                <BsNavLink href="/cv" title="CV" />
+              </NavItem>
+              <NavItem>
+                <NavLink href="https://github.com/pangpondxd">Github</NavLink>
+              </NavItem>
+            </Nav>
+            <NavbarText>Simple Text</NavbarText>
+          </Collapse>
+        </Navbar>
+      </div>
+    );
+  }
 }
-
-export default Header
