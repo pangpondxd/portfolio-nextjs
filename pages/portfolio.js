@@ -3,7 +3,7 @@ import BaseLayout from "../components/layouts/BaseLayout";
 import axios from "axios";
 class Portfolio extends React.Component {
   static async getInitialProps({query}) {
-    let post = [];
+    let post = {};
     try {
       const res = await axios.get(`https://jsonplaceholder.typicode.com/posts/${query.id}`);
       post = res.data;

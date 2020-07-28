@@ -5,7 +5,7 @@ import axios from "axios";
 import {Link} from '../routes'
 class Portfolios extends React.Component {
   static async getInitialProps() {
-    let posts = [];
+    let posts = {};
     try {
       const res = await axios.get("https://jsonplaceholder.typicode.com/posts");
       posts = res.data;
