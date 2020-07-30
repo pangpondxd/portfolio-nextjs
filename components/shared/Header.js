@@ -34,7 +34,7 @@ export default class Header extends React.Component {
     return (
       <div>
         <Navbar color="light" light expand="md">
-          <NavbarBrand href="/">reactstrap</NavbarBrand>
+          <NavbarBrand href="/">Profiles</NavbarBrand>
           <NavbarToggler onClick={this.toggle} />
           <Collapse isOpen={this.isOpen} navbar>
             <Nav className="mr-auto" navbar>
@@ -57,7 +57,7 @@ export default class Header extends React.Component {
                 <NavLink href="https://github.com/pangpondxd">Github</NavLink>
               </NavItem>
             </Nav>
-            <NavbarText>Simple Text</NavbarText>
+            <NavbarText>Tanawat Wirattangsakul</NavbarText>
           </Collapse>
         </Navbar>
       </div>
