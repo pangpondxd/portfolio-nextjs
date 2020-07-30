@@ -1,6 +1,7 @@
 import React from 'react'
-import '../style/style.scss'
 import 'bootstrap/dist/css/bootstrap.min.css';
+import '../styles/style.scss'
+
 
 class App extends React.Component {
     static async getInitialProps({Component, ctx}) {

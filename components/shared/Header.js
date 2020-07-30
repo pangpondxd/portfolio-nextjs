@@ -7,10 +7,6 @@ import {
   Nav,
   NavItem,
   NavLink,
-  UncontrolledDropdown,
-  DropdownToggle,
-  DropdownMenu,
-  DropdownItem,
   NavbarText,
 } from "reactstrap";
 import Link from "next/link";
@@ -19,41 +15,44 @@ const BsNavLink = (props) => {
   const { title, href } = props;
   return (
     <Link href={href}>
-      <a className="nav-link">{title}</a>
+      <a className="nav-link port-navbar-link">{title}</a>
     </Link>
   );
 };
 
-export default class Header extends React.Component {
-  state = { isOpen: false };
-  toggle = () => {
-    this.setState({ isOpen: !this.state.isOpen });
-  };
+const  Header = () => {
+  const [isOpen, setIsOpen] = useState(false)
 
-  render() {
+  const toggle = () => setIsOpen(!isOpen)
     return (
       <div>
-        <Navbar color="light" light expand="md">
-          <NavbarBrand href="/">Profiles</NavbarBrand>
-          <NavbarToggler onClick={this.toggle} />
-          <Collapse isOpen={this.isOpen} navbar>
+        <Navbar 
+        className="port-navbar port-default absolute"
+        color="transparent"
+        dark
+        expand="md">
+          <Link href="/">
+            <a className="port-navbar-brand">W.Tanawat</a>
+          </Link>
+          <NavbarToggler onClick={toggle} />
+          <Collapse isOpen={isOpen} navbar>
             <Nav className="mr-auto" navbar>
-              <NavItem>
+              <NavItem className="port-navbar-item">
                 <BsNavLink href="/" title="Home" />
               </NavItem>
-              <NavItem>
+              <NavItem className="port-navbar-item">
                 <BsNavLink href="/about" title="About" />
               </NavItem>
-              <NavItem>
+              <NavItem className="port-navbar-item">
                 <BsNavLink href="/portfolios" title="Portfolios" />
               </NavItem>
-              <NavItem>
+              <NavItem className="port-navbar-item">
                 <BsNavLink href="/blog" title="Blogs" />
               </NavItem>
-              <NavItem>
+              <NavItem className="port-navbar-item">
                 <BsNavLink href="/cv" title="CV" />
               </NavItem>
-              <NavItem>
+              <NavItem className="port-navbar-item">
                 <NavLink href="https://github.com/pangpondxd">Github</NavLink>
               </NavItem>
             </Nav>
@@ -63,4 +62,4 @@ export default class Header extends React.Component {
       </div>
     );
   }
-}
+export default Header
