@@ -1,15 +1,15 @@
-import React from "react";
 import BaseLayout from "../components/layouts/BaseLayout";
-class CV extends React.Component {
-  render() {
+import BasePage from '../components/BasePage'
+const CV = () => {
     return (
       <div>
         <BaseLayout>
+        <BasePage>
           <h1>CV เว้ย</h1>
+          </BasePage>
         </BaseLayout>
       </div>
     );
-  }
 }
 
 export default CV;

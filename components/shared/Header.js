@@ -20,6 +20,13 @@ const BsNavLink = (props) => {
   );
 };
 
+const BsNavBrand = () => 
+  <Link href="/">
+  <a className="navbar-brand port-navbar-brand">W.Tanawat</a>
+  </Link>
+
+
+
 const  Header = () => {
   const [isOpen, setIsOpen] = useState(false)
 
@@ -31,9 +38,7 @@ const  Header = () => {
         color="transparent"
         dark
         expand="md">
-          <Link href="/">
-            <a className="port-navbar-brand">W.Tanawat</a>
-          </Link>
+          <BsNavBrand />
           <NavbarToggler onClick={toggle} />
           <Collapse isOpen={isOpen} navbar>
             <Nav className="mr-auto" navbar>
@@ -51,9 +56,6 @@ const  Header = () => {
               </NavItem>
               <NavItem className="port-navbar-item">
                 <BsNavLink href="/cv" title="CV" />
-              </NavItem>
-              <NavItem className="port-navbar-item">
-                <NavLink href="https://github.com/pangpondxd">Github</NavLink>
               </NavItem>
             </Nav>
             <NavbarText>Tanawat Wirattangsakul</NavbarText>

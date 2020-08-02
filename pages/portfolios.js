@@ -1,11 +1,12 @@
-import React from "react";
 import BaseLayout from "../components/layouts/BaseLayout";
 import axios from "axios";
+import BasePage from '../components/BasePage'
 // import Link from "next/link";
 import {Link} from '../routes'
-class Portfolios extends React.Component {
-  static async getInitialProps() {
-    let posts = {};
+import Portfolio from "./portfolio";
+const Portfolios= ({posts}) =>  {
+  Portfolios.getInitialProps = async () => {
+    let posts = [];
     try {
       const res = await axios.get("https://jsonplaceholder.typicode.com/posts");
       posts = res.data;
@@ -15,7 +16,7 @@ class Portfolios extends React.Component {
     return { posts: posts.slice(0, 10) };
   }
 
-  renderPosts(posts) {
+  const renderPosts = (posts) => {
     return posts.map((p) => (
       <li key={p.id} style={{ fontSize: "20px"}}>
         <Link route={`/portfolios/${p.id}`}>
@@ -27,15 +28,14 @@ class Portfolios extends React.Component {
     ));
   }
 
-  render() {
-    const { posts } = this.props;
     return (
       <BaseLayout>
+        <BasePage>
         <h1 className="customClass">Portfolio เว้ย</h1>
-        <ul>{this.renderPosts(posts)}</ul>
+        <ul>{renderPosts(posts)}</ul>
+        </BasePage>
       </BaseLayout>
     );
-  }
 }
 
 export default Portfolios;

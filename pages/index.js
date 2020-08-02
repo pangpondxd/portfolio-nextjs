@@ -5,8 +5,7 @@ import Typed from "react-typed";
 
 const ROLES = ['Developer', 'React.js', 'Angular', 'Vue.js', 'Tech Lover', 'Bloger']
 
-class Index extends React.Component {
-  render() {
+const Index = (props) => {
     return (
       <div>
         <BaseLayout className="cover">
@@ -66,6 +65,5 @@ class Index extends React.Component {
       </div>
     );
   }
-}
 
 export default Index;
