@@ -1,6 +1,6 @@
-import BaseLayout from "../../components/layouts/BaseLayout";
+import BaseLayout from "@/components/layouts/BaseLayout";
 import axios from "axios";
-import BasePage from '../../components/BasePage'
+import BasePage from '@/components/BasePage'
 import Link from "next/link";
 const Portfolios= ({posts}) =>  {
   const renderPosts = (posts) => {

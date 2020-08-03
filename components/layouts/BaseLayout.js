@@ -1,4 +1,4 @@
-import Header from "../shared/Header";
+import Header from "@/components/shared/Header";
 import React from "react";
 
 const BaseLaout = (props) => {
