@@ -1,13 +1,13 @@
 import axios from 'axios'
 
-const handlePosts = (req, res) => {
+export default async (req, res) => {
     try {
-      const res = await axios.get("https://jsonplaceholder.typicode.com/posts");
-      posts = res.data;
+      const axiosRes = await axios.get("https://jsonplaceholder.typicode.com/posts");
+      const posts = axiosRes.data;
+      res.status(200).json( posts.slice(0, 10))
     } catch (e) {
       console.log(e);
+      res.status(error.status || 400).end('Api Error')
     }
-    return { posts: posts.slice(0, 10) };
 }
 
-export default handlePosts

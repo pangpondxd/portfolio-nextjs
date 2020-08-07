@@ -1,20 +1,12 @@
 import BaseLayout from "@/components/layouts/BaseLayout";
-import {useEffect} from 'react'
+
 import axios from "axios";
 import BasePage from '@/components/BasePage'
 import Link from "next/link";
+import {useGetPosts} from '@/actions/index'
 
-const Portfolios= ({posts}) =>  {
-
-  useEffect(async () => {
-    async function getPosts() {
-      const res = await fetch('/api/v1/posts')
-      const data = await res.json()
-      debugger;
-    } 
-    getPosts()
-  }, [])
-
+const Portfolios= () =>  {
+  const {posts} = useGetPosts()
 
   const renderPosts = (posts) => {
     return posts.map((p) => (
