@@ -1,5 +1,5 @@
-import BaseLayout from "@/portfolio-nextjs/components/layouts/BaseLayout";
-import BasePage from '@/portfolio-nextjs/components/BasePage'
+import BaseLayout from "@/components/layouts/BaseLayout";
+import BasePage from '@/components/BasePage'
 const CV = () => {
     return (
       <div>
