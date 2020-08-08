@@ -4,7 +4,7 @@ import Link from "next/link";
 import { useGetPosts } from "@/actions";
 
 const Portfolios = () => {
-  const { posts, error } = useGetPosts();
+  const { posts, error, loading } = useGetPosts();
 
   const renderPosts = (posts) => {
     return posts.map((p) => (
@@ -22,6 +22,9 @@ const Portfolios = () => {
     <BaseLayout>
       <BasePage>
         <h1 className="customClass">Portfolio เว้ย</h1>
+        { loading &&
+         <div class="loader">Loading...</div>
+        }
         { posts &&
           <ul>
             {renderPosts(posts)}
